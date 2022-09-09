@@ -6,11 +6,11 @@ have more than one gpu .
 # ----------------------------------------------------------------
 # ----------------------------------------------------------------
 '''
---  DataParallel is single-process, multi-thread, 
+--  nn.DataParallel is single-process, multi-thread, 
     and only works on a single machine.
     
 --  This container parallelizes the application of the given module 
-    by splitting the input across the specified devices 
+    by splitting the input across the specified devices (GPU) 
     by chunking in the batch dimension (other objects will be 
     copied once per device). In the forward pass, the module is 
     replicated on each device, and each replica handles a portion 
@@ -184,7 +184,8 @@ def example(rank, world_size):
     local_rank  | 0  |   1  |  0   |   1 |
     rank        | 0  |   1  |  2   |   4 |
     
-    here world_size = 4
+    here :
+    world_size = 4
     rank = [ 0 , 1 , 2 , 3 ]
     there 2 gpu for every node (machine),total 4
     '''
