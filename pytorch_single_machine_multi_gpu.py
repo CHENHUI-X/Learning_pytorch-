@@ -182,7 +182,7 @@ def example(rank, world_size):
                 |    Node1  |   Node2    |
     ____________| p1 |  p2  |  p3  |  p4 |
     local_rank  | 0  |   1  |  0   |   1 |
-    rank        | 0  |   1  |  2   |   4 |
+    rank        | 0  |   1  |  3   |   4 |
     
     here :
     world_size = 4
